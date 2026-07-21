@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>이수재 | 자기소개</title>
+  <meta name="description" content="데이터로 반복 업무를 자동화하는 RPA 개발자 이수재의 자기소개 페이지" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 상단 네비게이션 -->
+  <nav class="nav">
+    <a href="#hero" class="nav__logo">SL</a>
+    <ul class="nav__menu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero 영역 -->
+  <header id="hero" class="hero">
+    <div class="hero__inner reveal">
+      <p class="hero__hi">안녕하세요, 저는</p>
+      <h1 class="hero__name">이수재 <span class="hero__name-en">Sujae Lee</span></h1>
+      <p class="hero__tagline">데이터로 반복 업무를 <span class="accent">자동화</span>하는 RPA 개발자</p>
+      <div class="hero__actions">
+        <a href="#projects" class="btn btn--primary">프로젝트 보기</a>
+        <a href="#contact" class="btn btn--ghost">연락하기</a>
+      </div>
+    </div>
+    <div class="hero__scroll">↓ scroll</div>
+  </header>
+
+  <main>
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="section__head reveal">
+        <span class="section__num">01</span>
+        <h2 class="section__title">About Me</h2>
+      </div>
+      <div class="about reveal">
+        <p class="about__text">
+          반복되는 수작업을 코드와 자동화 도구로 걷어내는 일을 좋아합니다.
+          데이터를 다루고, 흐름을 설계하고, 사람이 더 중요한 일에 집중할 수 있도록
+          프로세스를 만드는 데서 보람을 느낍니다.
+        </p>
+        <ul class="about__keywords">
+          <li>#자동화</li>
+          <li>#데이터</li>
+          <li>#꼼꼼함</li>
+          <li>#문제해결</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <div class="section__head reveal">
+        <span class="section__num">02</span>
+        <h2 class="section__title">Skills</h2>
+      </div>
+      <div class="skills reveal">
+        <!-- data-level 값(0~100)을 JS가 읽어서 게이지를 채웁니다 -->
+        <div class="skill" data-level="85">
+          <div class="skill__top"><span>Python</span><span class="skill__pct">85%</span></div>
+          <div class="skill__bar"><div class="skill__fill"></div></div>
+        </div>
+        <div class="skill" data-level="80">
+          <div class="skill__top"><span>SQL</span><span class="skill__pct">80%</span></div>
+          <div class="skill__bar"><div class="skill__fill"></div></div>
+        </div>
+        <div class="skill" data-level="90">
+          <div class="skill__top"><span>UiPath</span><span class="skill__pct">90%</span></div>
+          <div class="skill__bar"><div class="skill__fill"></div></div>
+        </div>
+        <div class="skill" data-level="75">
+          <div class="skill__top"><span>Power Automate</span><span class="skill__pct">75%</span></div>
+          <div class="skill__bar"><div class="skill__fill"></div></div>
+        </div>
+        <div class="skill" data-level="88">
+          <div class="skill__top"><span>Excel</span><span class="skill__pct">88%</span></div>
+          <div class="skill__bar"><div class="skill__fill"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <div class="section__head reveal">
+        <span class="section__num">03</span>
+        <h2 class="section__title">Projects</h2>
+      </div>
+      <div class="projects reveal">
+        <article class="card">
+          <div class="card__period">2024</div>
+          <h3 class="card__title">사내 보고서 자동화</h3>
+          <p class="card__desc">
+            매일 수작업으로 취합하던 보고서 작성 과정을 RPA로 자동화했습니다.
+            데이터 수집 · 가공 · 문서 생성까지 하나의 흐름으로 연결했습니다.
+          </p>
+          <div class="card__result">
+            <span class="card__result-label">성과</span>
+            일 <b>2시간</b> → <b class="accent">5분</b> 으로 단축
+          </div>
+          <div class="card__tags">
+            <span>Python</span><span>UiPath</span><span>Excel</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="section__head reveal">
+        <span class="section__num">04</span>
+        <h2 class="section__title">Contact</h2>
+      </div>
+      <div class="contact reveal">
+        <p class="contact__text">함께 이야기 나누고 싶으시면 언제든 연락 주세요.</p>
+        <div class="contact__links">
+          <a href="mailto:dltnwo206@gmail.com" class="btn btn--primary">이메일 보내기</a>
+          <a href="https://github.com/dltnwo206" class="btn btn--ghost" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> 이수재 · Built with HTML · CSS · JavaScript</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
