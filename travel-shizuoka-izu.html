@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="2026년 9월 30일 ~ 10월 7일 시즈오카·이즈 7박 8일 여행 일정과 예산" />
+<title>엄마와 정우의 시즈오카·이즈</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --paper:#F7F6F2; --card:#EEF0F2; --ink:#1F2933; --sub:#5F6B76;
+    --fuji:#3A5A8C; --fuji-soft:#DCE4F2; --onsen:#C8663A; --onsen-soft:#F6E2D6;
+    --line:#DDE1E6; --ok:#3F7D5C; --ok-soft:#DFEDE4; --warn:#A85A2C; --free:#7F9A7A;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#16191E; --card:#20252C; --ink:#E8EAEE; --sub:#9AA4AF;
+      --fuji:#8FB0E0; --fuji-soft:#22324A; --onsen:#E08A5C; --onsen-soft:#3B2A22;
+      --line:#313843; --ok:#86BC9E; --ok-soft:#213129; --warn:#E5A277; --free:#9BB89A;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#16191E; --card:#20252C; --ink:#E8EAEE; --sub:#9AA4AF;
+    --fuji:#8FB0E0; --fuji-soft:#22324A; --onsen:#E08A5C; --onsen-soft:#3B2A22;
+    --line:#313843; --ok:#86BC9E; --ok-soft:#213129; --warn:#E5A277; --free:#9BB89A;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{background:var(--paper); color:var(--ink); margin:0;
+    font-family:'Noto Sans KR',-apple-system,'Malgun Gothic',sans-serif; line-height:1.6;
+    display:flex; flex-direction:column; overflow:hidden}
+  h1,h2,h3{font-family:'Gowun Batang','Noto Sans KR',serif; text-wrap:balance; margin:0}
+  .sub{color:var(--sub)} .mono{font-variant-numeric:tabular-nums}
+  .topbar{flex:0 0 auto; display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; padding:16px 24px 12px; border-bottom:1px solid var(--line)}
+  .topbar h1{font-size:1.15rem}
+  .topbar .range{font-size:.82rem; color:var(--sub); font-variant-numeric:tabular-nums}
+  .topbar .hint{margin-left:auto; font-size:.78rem; color:var(--sub)}
+  .deck{flex:1 1 auto; display:flex; overflow-x:auto; overflow-y:hidden; scroll-snap-type:x mandatory; scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ .deck{scroll-behavior:auto} }
+  .page{flex:0 0 100%; scroll-snap-align:start; overflow-y:auto; padding:26px 24px 90px; display:flex; justify-content:center}
+  .page-inner{width:100%; max-width:780px; display:flex; flex-direction:column; gap:18px}
+  .day-head{display:flex; align-items:flex-end; gap:14px; flex-wrap:wrap; border-bottom:2px solid var(--onsen); padding-bottom:12px}
+  .day-head .dn{font-family:'Gowun Batang',serif; font-size:2rem; font-weight:700; color:var(--fuji); line-height:1; font-variant-numeric:tabular-nums}
+  .day-head .dw{font-size:.8rem; font-weight:700; color:var(--fuji)}
+  .day-head h2{font-size:1.3rem; flex:1; min-width:200px}
+  .day-sum{display:grid; grid-template-columns:auto auto; gap:2px 16px; background:var(--onsen-soft); border-radius:10px; padding:9px 15px; font-size:.8rem; align-content:center}
+  .day-sum span{color:var(--sub)}
+  .day-sum b{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap}
+  .day-sum .tt{border-top:1.5px solid var(--warn); padding-top:3px; margin-top:2px; color:var(--warn); font-weight:700}
+  .tl{display:flex; flex-direction:column}
+  .row{display:grid; grid-template-columns:64px 1fr 112px; gap:12px; padding:9px 4px; border-bottom:1px solid var(--line); font-size:.92rem; align-items:baseline}
+  .row .t{font-weight:700; color:var(--fuji); font-variant-numeric:tabular-nums; font-size:.85rem}
+  .row .a .d{display:block; font-size:.8rem; color:var(--sub)}
+  .row .c{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; font-size:.88rem}
+  .row .c.free{color:var(--free)} .row .c.paid{color:var(--sub); font-size:.78rem}
+  .row.hl{background:var(--onsen-soft); border-radius:8px; border-bottom-color:transparent}
+  .mission{font-size:.84rem; color:var(--warn); background:var(--onsen-soft); border-radius:8px; padding:8px 14px}
+  .tip{font-size:.82rem; color:var(--sub); background:var(--card); border:1px solid var(--line); border-radius:8px; padding:8px 14px}
+  .cover{justify-content:center}
+  .cover-inner{max-width:640px; display:flex; flex-direction:column; gap:18px; margin:auto 0}
+  .eyebrow{color:var(--onsen); font-size:.78rem; font-weight:700; letter-spacing:.14em}
+  .cover h2{font-size:2.3rem; line-height:1.25}
+  .stats{display:flex; flex-wrap:wrap; gap:10px}
+  .stat{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 16px; flex:1; min-width:130px}
+  .stat .v{font-family:'Gowun Batang',serif; font-size:1.3rem; font-weight:700; font-variant-numeric:tabular-nums}
+  .stat .k{font-size:.75rem; color:var(--sub)}
+  .booked{font-size:.86rem; display:flex; flex-direction:column; gap:6px}
+  .booked div{display:flex; gap:8px; align-items:baseline}
+  .pill{font-size:.7rem; font-weight:700; border-radius:999px; padding:1px 9px; background:var(--ok-soft); color:var(--ok); white-space:nowrap}
+  .swipe-cue{color:var(--onsen); font-weight:700; font-size:.9rem}
+  table{border-collapse:collapse; width:100%; font-size:.9rem}
+  th{font-size:.75rem; color:var(--sub); text-align:left; font-weight:700}
+  th,td{padding:8px 8px; border-bottom:1px solid var(--line)}
+  td.num{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap}
+  tr.sum td{font-weight:700; border-top:2px solid var(--ink); border-bottom:none}
+  .nav{position:fixed; left:0; right:0; bottom:0; display:flex; align-items:center; justify-content:center; gap:14px; padding:12px 0 16px; background:linear-gradient(to top, var(--paper) 65%, transparent)}
+  .nav button{background:var(--card); color:var(--ink); border:1px solid var(--line); border-radius:999px; width:40px; height:40px; font-size:1.1rem; cursor:pointer}
+  .nav button:hover{border-color:var(--onsen); color:var(--onsen)}
+  .nav button:focus-visible{outline:2px solid var(--onsen); outline-offset:2px}
+  .dot-label{font-size:.78rem; color:var(--sub); min-width:150px; text-align:center; font-variant-numeric:tabular-nums}
+  @media (max-width:560px){ .row{grid-template-columns:52px 1fr 92px; gap:8px} .cover h2{font-size:1.7rem} .topbar .hint{display:none} }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>엄마와 정우의 시즈오카·이즈 🗻</h1>
+  <span class="range">2026.9.30(수) – 10.7(수) · 7박 8일</span>
+  <span class="hint">← → 키 또는 아래 화살표로 넘기기</span>
+</div>
+
+<div class="deck" id="deck" tabindex="0">
+
+  <!-- 0 표지 -->
+  <section class="page cover">
+    <div class="cover-inner">
+      <span class="eyebrow">2026. 9. 30 — 10. 7 · 부산 ↔ 시즈오카</span>
+      <h2>후지산과 온천, 카피바라와 새,<br>그리고 객실 가이세키의 밤</h2>
+      <div class="stats">
+        <div class="stat"><div class="v">약 193만 원</div><div class="k">총 예상 경비</div></div>
+        <div class="stat"><div class="v">약 128만 원</div><div class="k">결제·확정분 (항공+숙박 7박)</div></div>
+        <div class="stat"><div class="v">약 65만 원</div><div class="k">현지에서 쓸 돈</div></div>
+      </div>
+      <div class="booked">
+        <div><span class="pill">확정</span> 에어부산 BX1645/BX1635 — 358,000원(수하물 15kg 포함) · 9/30 09:05발 / 10/7 11:50발</div>
+        <div><span class="pill">확정</span> KOKO HOTEL 시즈오카 2박 ₩157,810 (대욕장) · 취소마감 8/31</div>
+        <div><span class="pill">확정</span> 이토엔 호텔 본관 2박 ¥23,392(30% 쿠폰 재예약) — 3관 온천순례·2식 뷔페 · 취소마감 9/24</div>
+        <div><span class="pill">확정</span> 세이잔 야마토 1박 ¥46,692(쿠폰 -19,308) — 방 노천탕·개인실 가이세키·이토역 무료 송영 · 22315092574658</div>
+        <div><span class="pill">예약중</span> KOKO 시즈오카 재입성 2박 ≈₩133,785 — 야이즈에서 교체(8/30) · 확정 후 쿠레타케인 취소</div>
+      </div>
+      <p class="sub" style="font-size:.84rem">금액은 원화(100엔=900원) · 숙박은 확정가, 나머지는 계획치 · 2식 포함일(10/2·3·4) 점심은 편의점 간식</p>
+      <p class="swipe-cue">오른쪽으로 넘기면 하루씩 → 🗻</p>
+    </div>
+  </section>
+
+  <!-- Day 1 -->
+  <section class="page"><div class="page-inner">
+    <div class="day-head"><div><div class="dn">9/30</div><div class="dw">수 · DAY 1</div></div><h2>도착 &amp; 시즈오카 정찰</h2>
+      <div class="day-sum"><span>숙박 (KOKO ½)</span><b>78,900원</b><span>식비</span><b>29,700원</b><span>교통·입장 등</span><b>20,700원</b><span class="tt">합계</span><b class="tt">129,600원 + 항공 358,000원</b></div></div>
+    <div class="tl">
+      <div class="row"><span class="t">09:05</span><span class="a"><b>부산 → 시즈오카</b> BX1645 (10:50 도착)<span class="d">2인 왕복·수하물 15kg 결제완료</span></span><span class="c">358,000원</span></div>
+      <div class="row"><span class="t">11:20</span><span class="a"><b>공항버스 → 시즈오카역</b> 약 50분</span><span class="c">~16,200원</span></div>
+      <div class="row"><span class="t">12:30</span><span class="a"><b>KOKO에 짐 맡기기 → 점심: 역빌딩 파르셰</b>에서 가볍게<span class="d">호텔은 역 도보 13분·택시 기본요금</span></span><span class="c">~13,500원</span></div>
+      <div class="row"><span class="t">14:00</span><span class="a"><b>슨푸성 공원</b> — 도쿠가와 이에야스의 성터, 히가시고몬·야구라 + 상점가 정찰</span><span class="c">~4,500원</span></div>
+      <div class="row hl"><span class="t">16:00</span><span class="a"><b>KOKO HOTEL 체크인</b> → 9층 대욕장 + 목욕 후 만화·마사지체어 라운지<span class="d">아고다 1764701558 · 스탠다드 더블(금연)</span></span><span class="c">2박 157,810원</span></div>
+      <div class="row"><span class="t">18:00</span><span class="a"><b>저녁: 아오바 오뎅가이(오뎅 골목)</b> — 검은 국물 시즈오카 오뎅<span class="d">저녁 장사(16~17시 개점)라 낮엔 닫혀 있음 — 그래서 저녁에!</span></span><span class="c">~18,000원</span></div>
+    </div>
+    <div class="mission">✅ 정우 미션 — 시즈오카역 주변 길 외우기 → 내일부터 길 안내 담당</div>
+    <div class="tip">💡 아침 비행이라 도착일이 통째로 하루. 정찰 수준으로 가볍게, 저녁은 대욕장+만화 라운지 충전 타임</div>
+  </div></section>
+
+  <!-- Day 2 -->
+  <section class="page"><div class="page-inner">
+    <div class="day-head"><div><div class="dn">10/1</div><div class="dw">목 · DAY 2</div></div><h2>후지노미야 원정 🗻</h2>
+      <div class="day-sum"><span>숙박 (KOKO ½)</span><b>78,900원</b><span>식비</span><b>36,000원</b><span>교통·입장 등</span><b>39,600원</b><span class="tt">합계</span><b class="tt">약 154,800원</b></div></div>
+    <div class="tl">
+      <div class="row"><span class="t">08:30</span><span class="a"><b>JR 시즈오카 → 후지 → (미노부선) 후지노미야</b> 약 1시간 10분</span><span class="c">왕복 ~23,400원</span></div>
+      <div class="row hl"><span class="t">10:00</span><span class="a"><b>후지산 혼구 센겐타이샤</b> — 후지산 신앙의 총본산, 도장 1호</span><span class="c free">0원</span></div>
+      <div class="row"><span class="t">11:00</span><span class="a"><b>후지산 세계유산센터</b> — 거꾸로 후지 건축, 옥상 전망대에서 후지산</span><span class="c">~2,700원</span></div>
+      <div class="row"><span class="t">12:30</span><span class="a"><b>점심: 후지노미야 야키소바</b> — B급 그루메 원조 노포</span><span class="c">~13,500원</span></div>
+      <div class="row"><span class="t">14:00</span><span class="a"><b>시라이토 폭포(버스 30분) or 조기 복귀</b> — 정우와 선택지 2개</span><span class="c">(~13,500원)</span></div>
+      <div class="row"><span class="t">16:30</span><span class="a"><b>시즈오카 복귀 + 충전 타임</b> (대욕장·라운지)</span><span class="c free">포함</span></div>
+      <div class="row"><span class="t">19:00</span><span class="a"><b>저녁: 사쿠라에비 요리 or 로컬 이자카야</b></span><span class="c">~22,500원</span></div>
+    </div>
+    <div class="mission">✅ 정우 미션 — 센겐타이샤 도장 1호 + 후지산 최고의 한 컷(사진사 담당)</div>
+    <div class="tip">☔ 비 예보면 Day 1과 스왑 — 후지산은 맑은 날에. ⚠️ 후지→후지노미야 미노부선은 시간당 1~2대 — 갈아탈 열차 시각 미리 확인</div>
+  </div></section>
+
+  <!-- Day 3 -->
+  <section class="page"><div class="page-inner">
+    <div class="day-head"><div><div class="dn">10/2</div><div class="dw">금 · DAY 3</div></div><h2>이토로 이동, 온천 모드 전환 ♨️</h2>
+      <div class="day-sum"><span>숙박 (이토엔 ½·2식·쿠폰)</span><b>105,300원</b><span>식비</span><b>7,200원</b><span>교통·입장 등</span><b>30,600원</b><span class="tt">합계</span><b class="tt">약 143,100원</b></div></div>
+    <div class="tl">
+      <div class="row"><span class="t">09:30</span><span class="a"><b>느긋한 아침 → 10:00 체크아웃</b> → 점심: 시즈오카역 파르셰에서 가볍게</span><span class="c">~13,500원</span></div>
+      <div class="row"><span class="t">12:40</span><span class="a"><b>JR 시즈오카 → 아타미 → 이토</b> 약 2시간</span><span class="c">~26,100원</span></div>
+      <div class="row hl"><span class="t">15:00</span><span class="a"><b>이토 도착(14:50) → 이토엔 호텔 본관 도착 즉시 체크인</b> → 짐 풀고 온천 1차 입욕 · <b>3관 온천 순례권</b>(본관·마츠카와칸·별관)<span class="d">8/31 트래블러스 30% 쿠폰 재예약 · 재패니즈룸 리버뷰 · 입탕세 300엔/인 현지</span></span><span class="c">2박 210,500원 ✅</span></div>
+      <div class="row"><span class="t">16:30</span><span class="a"><b>이토 온천가 산책</b> — 도카이칸(견학 ~17시 접수, 늦으면 외관+D4 밤 라이트업) + 마츠카와 강변</span><span class="c">~4,500원</span></div>
+      <div class="row"><span class="t">18:00</span><span class="a"><b>뷔페 저녁 ①</b> — 정우 뷔페 공략법 "3라운드제"(정찰→본식→디저트), 음료·주류 무제한</span><span class="c free">포함</span></div>
+    </div>
+    <div class="mission">✅ 정우 미션 — 도카이칸 옛 온천여관 탐험 + 뷔페 3라운드 완수</div>
+    <div class="tip">💡 이동일은 일정 최소화 — 오후는 온천과 산책만. 예약 건물은 본관(마츠카와칸 아님), 셔틀 시간은 본관 기준 현장 확인</div>
+  </div></section>
+
+  <!-- Day 4 -->
+  <section class="page"><div class="page-inner">
+    <div class="day-head"><div><div class="dn">10/3</div><div class="dw">토 · DAY 4</div></div><h2>이즈고원의 날 — 카피바라와 화산 🌋</h2>
+      <div class="day-sum"><span>숙박 (이토엔 ½·2식·쿠폰)</span><b>105,300원</b><span>식비</span><b>7,200원</b><span>교통·입장 등</span><b>60,300원</b><span class="tt">합계</span><b class="tt">약 172,800원</b></div></div>
+    <div class="tl">
+      <div class="row"><span class="t">09:00</span><span class="a"><b>버스/전철로 이즈고원</b></span><span class="c">왕복 ~13,500원</span></div>
+      <div class="row hl"><span class="t">09:30</span><span class="a"><b>이즈 샤보텐 동물공원</b> — 카피바라 온천, 동물 방목 교감<span class="d">토요일 — 개장 직후 입장</span></span><span class="c">36,000원</span></div>
+      <div class="row"><span class="t">12:30</span><span class="a"><b>점심: 편의점 간식 가볍게</b> (저녁 뷔페에 배 비워두기)</span><span class="c">~7,200원</span></div>
+      <div class="row"><span class="t">14:00</span><span class="a"><b>오무로산 리프트</b> — 분화구 둘레 한 바퀴(약 20분)<span class="d">강풍 시 운휴 → 그란이루미 등 대체</span></span><span class="c">~13,500원</span></div>
+      <div class="row"><span class="t">16:00</span><span class="a"><b>이토 복귀 + 온천 2차(마츠카와칸 순례) + 충전 타임</b></span><span class="c free">포함</span></div>
+      <div class="row"><span class="t">18:00</span><span class="a"><b>뷔페 저녁 ②</b> — 마지막 뷔페, 베스트 메뉴 랭킹 발표</span><span class="c free">포함</span></div>
+      <div class="row hl"><span class="t">20:00</span><span class="a"><b>유카타·게타 차림 온천가 밤 산책 (미니 도고)</b> — 도카이칸 라이트업 → 마츠카와 강변 → 공동욕장 도장(300엔) → 온천 2차</span><span class="c">외탕 2,700원 선택</span></div>
+    </div>
+    <div class="mission">✅ 정우 미션 — 최애 동물 톱3 랭킹 발표 + 오무로산 분화구 한 바퀴 완주 인증샷</div>
+  </div></section>
+
+  <!-- Day 5 -->
+  <section class="page"><div class="page-inner">
+    <div class="day-head"><div><div class="dn">10/4</div><div class="dw">일 · DAY 5</div></div><h2>조가사키 절벽 → ⭐ 세이잔 야마토, 우리 방 노천탕의 밤 ♨️</h2>
+      <div class="day-sum"><span>숙박 (세이잔 2식·쿠폰)</span><b>420,200원 ✅</b><span>식비</span><b>7,200원</b><span>교통·입장 등</span><b>17,100원</b><span class="tt">합계</span><b class="tt">약 444,500원</b></div></div>
+    <div class="tl">
+      <div class="row"><span class="t">09:00</span><span class="a"><b>이토엔 체크아웃 → 셔틀/도보로 이토역</b> → 짐은 역 코인로커 → 이즈큐 전철로 조가사키</span><span class="c">~17,100원</span></div>
+      <div class="row hl"><span class="t">10:00</span><span class="a"><b>조가사키 해안</b> — 용암 절벽 위 가도와키 현수교(48m·높이 23m) 건너기 + 등대</span><span class="c free">0원</span></div>
+      <div class="row"><span class="t">12:30</span><span class="a"><b>점심: 편의점 간단히</b> (저녁 가이세키 대비)<span class="d">⚠️조가사키카이간역 주변엔 가게가 거의 없음 — 점심거리는 이토역에서 미리 사서 출발</span></span><span class="c">~7,200원</span></div>
+      <div class="row hl"><span class="t">14:30</span><span class="a"><b>이토역 개찰구 앞 "아오야마 야마토" 초록 깃발 → 무료 송영버스 → 체크인(정우 담당)</b><span class="d">송영 13:30~17:30 매 30분·예약 불필요 · 공식 체크인 14:00~ · 16:00 전 도착이라 저녁 메인(전복/이즈 사슴/지역 닭)·식전주 선택 가능 · 예약 22315092574658(친구 계정)</span></span><span class="c">420,200원 ✅</span></div>
+      <div class="row"><span class="t">15:30</span><span class="a"><b>객실 전용 노천탕 개시!</b> — 12.5다다미 방에 딸린 우리만의 온천</span><span class="c free">포함</span></div>
+      <div class="row hl"><span class="t">18:00</span><span class="a"><b>개인실 가이세키 (가을 오미타테 10품)</b> — 요리별 정우 별점, 최고의 한 접시 발표. 정우는 성인 코스라 남겨도 OK</span><span class="c free">포함</span></div>
+      <div class="row"><span class="t">20:00</span><span class="a"><b>방 노천탕 2차 + 다다미 뒹굴기</b> — 유카타 밤 산책은 어제 이토엔 밤에 완료</span><span class="c free">포함</span></div>
+    </div>
+    <div class="mission">✅ 정우 미션 — 현수교 완주 인증 · 료칸 체크인 담당 · 가이세키 별점 심사위원</div>
+    <div class="tip">💡 1910년 창업 자가원천 노포. 일요일 밤이라 한산. 마쓰야마 도고칸의 밤이 여기서 부활 — 입탕세 300엔/인 현지</div>
+  </div></section>
+
+  <!-- Day 6 -->
+  <section class="page"><div class="page-inner">
+    <div class="day-head"><div><div class="dn">10/5</div><div class="dw">월 · DAY 6</div></div><h2>시즈오카 복귀 → 시미즈 — 마루코와 참치 🐟</h2>
+      <div class="day-sum"><span>숙박 (KOKO② ½)</span><b>66,900원</b><span>식비</span><b>49,500원</b><span>교통·입장 등</span><b>45,000원</b><span class="tt">합계</span><b class="tt">약 161,400원</b></div></div>
+    <div class="tl">
+      <div class="row"><span class="t">08:00</span><span class="a"><b>료칸 조식(개인실)</b> → 10:00 체크아웃 → 이토역 도보 15~20분(내리막)</span><span class="c free">포함</span></div>
+      <div class="row"><span class="t">10:30</span><span class="a"><b>JR 이토 → 아타미 → 시즈오카</b> 약 2시간 (아타미역 에키벤 구경) → KOKO에 짐 맡기기</span><span class="c">~36,000원</span></div>
+      <div class="row hl"><span class="t">13:00</span><span class="a"><b>JR 시미즈 11분 → 카시노이치(河岸の市)</b> — 참치 시장, 늦은 점심 마구로 덮밥</span><span class="c">~36,000원</span></div>
+      <div class="row hl"><span class="t">14:30</span><span class="a"><b>에스파루스 드림플라자 — 치비마루코짱 랜드 · 관람차</b><span class="d">시미즈는 마루코의 고향 · 관람차에서 후지산 찾기</span></span><span class="c">~18,000원</span></div>
+      <div class="row"><span class="t">17:30</span><span class="a"><b>시즈오카 복귀 → KOKO 재체크인</b> — 익숙한 대욕장·만화라운지<span class="d">10/5~7 2박 재예약(≈₩133,785) · 확정 후 쿠레타케인 취소</span></span><span class="c">2박 ≈133,800원</span></div>
+      <div class="row"><span class="t">19:00</span><span class="a"><b>저녁: 역 주변 가볍게 + 무료 차즈케</b></span><span class="c">~18,000원</span></div>
+    </div>
+    <div class="mission">✅ 정우 미션 — 카시노이치에서 엄마가 먹을 회 고르기(정우 안목 담당)</div>
+    <div class="tip">💡 야이즈 대신 시미즈(8/30) — 참치 시장은 그대로, 마루코짱 랜드·관람차가 추가. 마지막 밤은 공항 동선이 가장 안전한 시즈오카역</div>
+  </div></section>
+
+  <!-- Day 7 -->
+  <section class="page"><div class="page-inner">
+    <div class="day-head"><div><div class="dn">10/6</div><div class="dw">화 · DAY 7</div></div><h2>시즈오카, 느긋한 하루 🍵</h2>
+      <div class="day-sum"><span>숙박 (KOKO② ½)</span><b>66,900원</b><span>식비</span><b>40,500원</b><span>교통·입장 등</span><b>13,500원</b><span class="tt">합계</span><b class="tt">약 120,900원</b></div></div>
+    <div class="tl">
+      <div class="row"><span class="t">08:30</span><span class="a"><b>늦잠 OK — 느긋한 아침</b> (역 카페·편의점 모닝 ※KOKO 차즈케는 밤 야식 서비스)</span><span class="c">~9,000원</span></div>
+      <div class="row"><span class="t">10:30</span><span class="a"><b>슨푸성 공원 해자 한 바퀴 + 상점가 산책</b> — 선물 오미야게 정찰<span class="d">우나기파이·녹차는 시내가 공항보다 저렴하고 다양</span></span><span class="c free">0원</span></div>
+      <div class="row"><span class="t">12:30</span><span class="a"><b>점심: 시즈오카역 파르셰</b> — 정우가 고르는 마지막 점심</span><span class="c">~18,000원</span></div>
+      <div class="row hl"><span class="t">14:00</span><span class="a"><b>홉비스퀘어</b> — 프라모델의 수도 시즈오카, 무료 전시 → 마음에 들면 키트 하나</span><span class="c">키트 ~13,500원</span></div>
+      <div class="row"><span class="t">15:00</span><span class="a"><b>스탠다드 프로덕츠 케야키플라자점</b> — 다이소+Standard Products+THREEPPY 복합 1,200㎡, 현내 최대급<span class="d">역 도보 7분 · 선물·잡화 1차 쇼핑</span></span><span class="c">선물 예산 內</span></div>
+      <div class="row"><span class="t">16:30</span><span class="a"><b>호텔 충전 타임</b> — 대욕장 + 만화라운지 + 방에서 프라모델 조립</span><span class="c free">포함</span></div>
+      <div class="row hl"><span class="t">18:30</span><span class="a"><b>아오바 오뎅골목 재방문 + 여행 결산의 밤</b> — 첫날 최애 집으로, 미션 발표회</span><span class="c">~22,500원</span></div>
+      <div class="row"><span class="t">20:00</span><span class="a"><b>돈키호테 료가에초점</b> — 오뎅골목 바로 옆 구역, 새벽 3시까지<span class="d">과자·잡화 마무리 쇼핑 · 수하물 15kg 한도 기억!</span></span><span class="c">선물 예산 內</span></div>
+    </div>
+    <div class="mission">✅ 정우 미션 — 결산 발표회 사회 + 프라모델 완성 인증</div>
+    <div class="tip">💡 짐 정리·수하물 15kg 체크는 오늘 밤에. 카초엔은 왕복 2시간이 아까워 제외(8/30) — 동물은 D4 샤보텐으로 충분</div>
+  </div></section>
+
+  <!-- Day 8 -->
+  <section class="page"><div class="page-inner">
+    <div class="day-head"><div><div class="dn">10/7</div><div class="dw">수 · DAY 8</div></div><h2>선물 미션 &amp; 귀국</h2>
+      <div class="day-sum"><span>숙박</span><b>—</b><span>식비</span><b>9,000원</b><span>교통·선물 등</span><b>88,200원</b><span class="tt">합계</span><b class="tt">약 97,200원</b></div></div>
+    <div class="tl">
+      <div class="row"><span class="t">07:30</span><span class="a"><b>간단 아침(전날 사둔 빵·편의점) → 08:30 체크아웃</b> → 평지 도보 13분 시즈오카역</span><span class="c">~4,500원</span></div>
+      <div class="row"><span class="t">09:00</span><span class="a"><b>시즈오카역 공항버스</b>(시즈테츠) 약 50~55분 → 10:00경 공항<span class="d">아침 출발 시각은 전날 시각표 확인(대략 1시간 간격) · 놓치면 다음 편, 최후엔 택시</span></span><span class="c">~16,200원</span></div>
+      <div class="row hl"><span class="t">10:00</span><span class="a"><b>선물 미션 — 예산 전권 위임</b>(공항 매장: 우나기파이·시즈오카 녹차·후지산 굿즈)</span><span class="c">72,000원</span></div>
+      <div class="row"><span class="t">10:30</span><span class="a"><b>수속 + 공항 간식</b></span><span class="c">~9,000원</span></div>
+      <div class="row"><span class="t">11:50</span><span class="a"><b>시즈오카 → 부산</b> BX1635 (14:00 도착)</span><span class="c paid">왕복 요금 포함</span></div>
+    </div>
+    <div class="mission">✅ 정우 미션 — 아빠·지우 형 선물 내 눈으로 고르기 → 귀가 후 직접 전달</div>
+    <div class="tip">💡 시즈오카역 직행 버스라 아침이 여유로움 — 공항에서 선물 미션·전망대. 낮 비행이라 부산 14:00 도착, 저녁 전에 귀가</div>
+  </div></section>
+
+  <!-- 예산 총괄 -->
+  <section class="page"><div class="page-inner">
+    <div class="day-head"><div><div class="dn">💰</div><div class="dw">SUMMARY</div></div><h2>예산 총괄</h2><div class="day-sum"><span class="tt">총 예상</span><b class="tt">약 1,930,000원</b></div></div>
+    <table>
+      <tr><th>항목</th><th style="text-align:right">금액 (원)</th><th>비고</th></tr>
+      <tr><td>항공 (2인 왕복 + 수하물)</td><td class="num">358,000</td><td class="sub">✅ 결제 완료</td></tr>
+      <tr><td>숙박 7박</td><td class="num">922,300</td><td class="sub">KOKO① 157,810 + 이토엔 210,500 ✅ + 세이잔 야마토 420,200 ✅ + KOKO② ≈133,785 — 트래블러스 쿠폰 2건 -27만</td></tr>
+      <tr><td>식비</td><td class="num">186,300</td><td class="sub">2식 포함 3일 점심은 편의점, 조식 포함 2일</td></tr>
+      <tr><td>교통·입장</td><td class="num">243,000</td><td class="sub">공항버스·JR·샤보텐·시미즈 등 — 택시 없음(버스·전철·도보). 일자별 표의 교통·선물 315,000에서 정우 선물 72,000 제외</td></tr>
+      <tr><td>선물</td><td class="num">144,000</td><td class="sub">정우 전권 7.2만 + 엄마 몫 7.2만</td></tr>
+      <tr><td>예비비</td><td class="num">81,000</td><td class="sub">우천·지각 시 택시 전환, 입탕세 등</td></tr>
+      <tr class="sum"><td>합계</td><td class="num">약 1,930,000원</td><td class="sub">계획환율 100엔=900원</td></tr>
+    </table>
+    <div class="scroll" style="overflow-x:auto">
+    <table>
+      <tr><th>일자별 (원)</th><th style="text-align:right">숙박</th><th style="text-align:right">식비</th><th style="text-align:right">교통·입장 등</th><th style="text-align:right">합계</th></tr>
+      <tr><td>D1 도착</td><td class="num">78,900</td><td class="num">29,700</td><td class="num">20,700</td><td class="num">129,600<br><span class="sub">+ 항공 358,000</span></td></tr>
+      <tr><td>D2 후지노미야</td><td class="num">78,900</td><td class="num">36,000</td><td class="num">39,600</td><td class="num">154,800</td></tr>
+      <tr><td>D3 이토 이동</td><td class="num">105,300</td><td class="num">7,200</td><td class="num">30,600</td><td class="num">143,100</td></tr>
+      <tr><td>D4 샤보텐·오무로산</td><td class="num">105,300</td><td class="num">7,200</td><td class="num">60,300</td><td class="num">172,800</td></tr>
+      <tr><td>D5 조가사키·세이잔 야마토</td><td class="num">420,200</td><td class="num">7,200</td><td class="num">17,100</td><td class="num">444,500</td></tr>
+      <tr><td>D6 시미즈·KOKO 복귀</td><td class="num">66,900</td><td class="num">49,500</td><td class="num">45,000</td><td class="num">161,400</td></tr>
+      <tr><td>D7 느긋한 시즈오카</td><td class="num">66,900</td><td class="num">40,500</td><td class="num">13,500</td><td class="num">120,900</td></tr>
+      <tr><td>D8 귀국</td><td class="num">—</td><td class="num">9,000</td><td class="num">88,200</td><td class="num">97,200</td></tr>
+      <tr class="sum"><td>합계</td><td class="num">922,300</td><td class="num">186,300</td><td class="num">315,000</td><td class="num">1,423,600<br><span class="sub">+ 항공 358,000 = 1,781,600</span></td></tr>
+    </table>
+    </div>
+    <p class="sub" style="font-size:.78rem; margin:4px 0 0">선물은 D8에 정우 몫 72,000만 계상 · 엄마 몫 72,000과 예비비 81,000은 총괄에만 포함 → 1,781,600 + 72,000 + 81,000 ≈ 약 193만 (KOKO② 결제액 확정 시 갱신)</p>
+    <div class="tip">💳 취소마감 캘린더 — <b>8/31</b> KOKO①(이후 100%) → <b>9/24</b> 이토엔 → <b>9/26</b> 세이잔 야마토(취소는 예약한 친구 계정에서만) → <b>KOKO②</b> 예약 시 확인. ✅ 요키칸 취소 완료(8/31, ¥39,204 환불 대기) · ⚠️ 남은 정리: 구 이토엔(22315092383731) 취소 · 쿠레타케인 취소(KOKO② 확정 후)</div>
+    <div class="tip">💴 현지 결제 — 입탕세(이토엔·세이잔 야마토 1인 1박 300엔)는 현금 · 카드 단말기의 "원화로 결제?"는 항상 거절(JPY 선택) · 편의점·소액은 트래블카드</div>
+  </div></section>
+
+</div>
+
+<div class="nav">
+  <button id="prev" aria-label="이전 페이지">‹</button>
+  <span class="dot-label" id="dotLabel"></span>
+  <button id="next" aria-label="다음 페이지">›</button>
+</div>
+
+<script>
+  const deck=document.getElementById('deck');
+  const pages=[...deck.querySelectorAll('.page')];
+  const labels=['표지','Day 1 · 9/30','Day 2 · 10/1','Day 3 · 10/2','Day 4 · 10/3','Day 5 · 10/4','Day 6 · 10/5','Day 7 · 10/6','Day 8 · 10/7','예산 총괄'];
+  const dotLabel=document.getElementById('dotLabel');
+  function cur(){return Math.round(deck.scrollLeft/deck.clientWidth);}
+  function go(i){i=Math.max(0,Math.min(pages.length-1,i)); deck.scrollTo({left:i*deck.clientWidth, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});}
+  function sync(){dotLabel.textContent=labels[cur()]||'';}
+  deck.addEventListener('scroll',()=>requestAnimationFrame(sync));
+  document.getElementById('prev').addEventListener('click',()=>go(cur()-1));
+  document.getElementById('next').addEventListener('click',()=>go(cur()+1));
+  window.addEventListener('keydown',e=>{ if(e.key==='ArrowRight'){go(cur()+1); e.preventDefault();} if(e.key==='ArrowLeft'){go(cur()-1); e.preventDefault();} });
+  window.addEventListener('resize',()=>go(cur()));
+  sync();
+</script>
+
+</body>
+</html>
